@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+WEBSITE_URL=${1:?Must supply a website URL}
+
+echo "Downloading website $WEBSITE_URL"
+
+wget \
+    --recursive \
+    --no-clobber \
+    --page-requisites \
+    --html-extension \
+    --convert-links \
+    --no-parent \
+    $WEBSITE_URL
